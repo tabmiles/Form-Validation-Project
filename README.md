@@ -1,5 +1,5 @@
 # Form Validation Project
-Course Project for CS 321 Web-Centric Programming
+Course Project for CS 321 Web-Centric Programming, created in 2020
 
 By: Tabitha Miles, Danielle Alexandre, and Eva Lynch
 
