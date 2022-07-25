@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--
+CS 321: Form Validation Project
+Due: March 10th, 2021
+By: Tabitha Miles, Danielle Alexandre, and Eva Lynch
+-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript"></script>
+
+  <title>Validation Form Project</title>
+
+  <style>
+    .required:after {
+      content:" *";
+      color:red;
+    }
+    input:invalid {
+      border: 2px solid red;
+    }
+    input:valid {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <img src="formBanner.png" width="100%" alt="Red triangle, the logo for Delta Airline">
+
+  <!-- Form -->
+  <form name="airlineForm">
+    <br>
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <!-- Salutations -->
+      <label for="salutation" class="required">Your Salutation:</label><br>
+      <input type="radio" id="mr" name="prefix" value="mr" required>Mr.<br>
+      <input type="radio" id="ms" name="prefix" value="ms">Ms.<br>
+      <input type="radio" id="dr" name="prefix" value="dr">Dr.<br>
+      <input type="radio" id="rev" name="prefix" value="rev">Rev.<br>
+      <input type="radio" id="n/a" name="prefix" value="">N/A<br><br>
+
+      <!-- First & Last Names -->
+      <label for="fname" class="required">First Name:</label>
+      <input type="text" id="fname" name="fname" placeholder="Mary" required><br><br>
+      <label for="lname" class="required">Last Name:</label>
+      <input type="text" id="lname" name="lname" placeholder="Smith" required><br><br>
+
+      <!-- Date of Birth -->
+      <label for="birthDate" class="required">Date of Birth:</label>
+      <input type="date" id="birthDate" name="birthDate" max="2013-10-20" required><br><br>
+
+      <!-- Address -->
+      <label for="road" class="required">Street:</label>
+      <input type="text" id="road" name="address" placeholder="123 Example St" required><br>
+      <br>
+      <label for="road" class="required">City:</label>
+      <input type="text" id="city" name="address" placeholder="Example City" required><br>
+      <br>
+      <label for="USstates" class="required">State:</label>
+      <select id="State" name="state" required>
+        <option value="">Choose State</option>
+        <option value="Alabama">Alabama</option>
+        <option value="Alaska">Alaska</option>
+        <option value="Arizona">Arizona</option>
+        <option value="Arkansas">Arkansas</option>
+        <option value="California">California</option>
+        <option value="Colorado">Colorado</option>
+        <option value="Connecticut">Connecticut</option>
+        <option value="Delaware">Delaware</option>
+        <option value="Florida">Florida</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Hawaii">Hawaii</option>
+        <option value="Idaho">Idaho</option>
+        <option value="Illinois">Illinois</option>
+        <option value="Indiana">Indiana</option>
+        <option value="Iowa">Iowa</option>
+        <option value="Kansas">Kansas</option>
+        <option value="Kentucky">Kentucky</option>
+        <option value="Louisiana">Louisiana</option>
+        <option value="Maine">Maine</option>
+        <option value="Maryland">Maryland</option>
+        <option value="Massachusetts">Massachusetts</option>
+        <option value="Michigan">Michigan</option>
+        <option value="Minnesota">Minnesota</option>
+        <option value="Mississippi">Mississippi</option>
+        <option value="Missouri">Missouri</option>
+        <option value="Montana">Montana</option>
+        <option value="Nebraska">Nebraska</option>
+        <option value="Nevada">Nevada</option>
+        <option value="New Hampshire">New Hampshire</option>
+        <option value="New Jersey">New Jersey </option>
+        <option value="New Mexico">New Mexico</option>
+        <option value="New York">New York</option>
+        <option value="North Carolina">North Carolina</option>
+        <option value="North Dakota">North Dakota</option>
+        <option value="Ohio">Ohio</option>
+        <option value="Oklahoma">Oklahoma</option>
+        <option value="Oregon">Oregon</option>
+        <option value="Pennsylvania">Pennsylvania</option>
+        <option value="Rhode Island">Rhode Island</option>
+        <option value="South Carolina">South Carolina</option>
+        <option value="South Dakota">South Dakota</option>
+        <option value="Tennessee">Tennessee</option>
+        <option value="Texas">Texas</option>
+        <option value="Utah">Utah</option>
+        <option value="Vermont">Vermont</option>
+        <option value="Virginia">Virginia</option>
+        <option value="Washington">Washington</option>
+        <option value="West Virginia">West Virginia</option>
+        <option value="Wisconsin">Wisconsin</option>
+        <option value="Wyoming">Wyoming</option>
+      </select>
+      <br><br>
+
+      <!-- Zipcode -->
+      <label for="zip" class="required">Zipcode:</label>
+      <input type="text" id="zip" placeholder="98765" required>
+      <br><br>
+
+      <!--- Country --->
+      <label for="country" class="required">Country:</label>
+      <select id="country" name="country" required>
+        <option value="">Choose Country</option>
+        <option value="United States">United States</option>
+      </select>
+      <br><br>
+
+      <!-- Phone Numbers -->
+      <label for="phoneNum" class="required">Phone Number:</label>
+      <input type="tel" id="num1" name="num1" minlength="12" maxlength="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+      <input type="radio" id="work1" name="type1" value="work1" required="required">Work Phone<br>
+      <input type="radio" id="home1" name="type1" value="home1">Home Phone<br>
+      <input type="radio" id="mobile1" name="type1" value="mobile1">Mobile Phone<br>
+      <br>
+
+      <label for="phoneNum" class="required">Phone Number:</label>
+      <input type="tel" id="num2" name="num2" minlength="12" maxlength="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+      <input type="radio" id="work2" name="type2" value="work2" required>Work Phone<br>
+      <input type="radio" id="home2" name="type2" value="home2">Home Phone<br>
+      <input type="radio" id="mobile2" name="type2" value="mobile2">Mobile Phone<br>
+      <br>
+
+      <label for="phoneNum" class="required">Phone Number:</label>
+      <input type="tel" id="num3" name="num3" minlength="12" maxlength="12" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br>
+      <input type="radio" id="work3" name="type3" value="work3" required>Work Phone<br>
+      <input type="radio" id="home3" name="type3" value="home3">Home Phone<br>
+      <input type="radio" id="mobile3" name="type3" value="mobile3">Mobile Phone<br>
+      <br>
+
+      <button type="button" name="mobileCheck" onclick="welcome()">Click for a phone call</button>
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>Flight Preferences</legend>
+
+      <!-- Seat Preference -->
+      <label for=”seat_preference”>Do you have a seat preference?</label><br>
+      <input type="checkbox" id="window" name="seat_pref" value="window">Window<br>
+      <input type="checkbox" id="middle" name="seat_pref" value="middle">Middle<br>
+      <input type="checkbox" id="aisle" name="seat_pref" value="aisle">Aisle<br>
+      <input type="checkbox" id="none" name="seat_pref" value="none">No preference<br>
+      <br>
+
+      <!-- Ameneties -->
+      <label for="amenities">What in-flight amenities would you like during the flight? </label><br>
+      <input type="checkbox" name="blanket" id="blanket">Blanket<br>
+      <input type="checkbox" name="pillow" id="pillow">Pillow<br>
+      <input type="checkbox" name="headphones" id="headphones">Headphones<br>
+      <br>
+
+      <!-- Pets -->
+      <label for=”pets”>Do you travel frequently with pet(s)?</label><br>
+      <input type="checkbox" id="none" name="pet" value="none">No pets<br>
+      <input type="checkbox" id="og_less_ten" name="pet" value="dog_less_ten">Dog (less than or equal to 10lbs)<br>
+      <input type="checkbox" id="dog_over_ten" name="pet" value="dog_over_ten">Dog (>10lbs)<br>
+      <input type="checkbox" id="cat_less_ten" name="pet" value="cat_less_ten">Cat (less than or equal to 10lbs)<br>
+      <input type="checkbox" id=“cat_over_ten” name="pet" value="cat_over_ten">Cat (>10lbs)<br>
+      <input type="checkbox" id="other" name="pet" value="other">Other: <br>
+      <input type="text" id="other_text" name="pet" placeholder="Please specify type/size"><br>
+      <br>
+
+    </fieldset>
+    <br>
+
+    <fieldset>
+      <legend>Complete Registration</legend>
+
+      <!-- Password -->
+      <label for="password" class="required">Enter Password: </label>
+      <input type="password" name="password" id="password" placeholder="********" required><br>
+      <br>
+      <label for="passwordCheck" class="required">Re-Enter Password: </label>
+      <input type="password" name="password" id="passwordCheck" placeholder="********" required onchange="validate()"><br>
+      <br>
+
+      <!-- Email -->
+      <label for="email" class="required">Enter Email: </label>
+      <input type="text" name="email" id="email" placeholder="myemail@example.com" required><br>
+      <br>
+
+      <!-- Miles -->
+      <label for="milesCount" class="required">How many miles have you flown? (Minimum of 25,000 miles required before eligible for frequent flyer registration): </label>
+      <input type="number" name="milesCount" id="milesCount" placeholder="25,000" min="25000" required><br>
+      <br>
+    </fieldset>
+    <br>
+
+    <input type="submit">
+  </form>
+
+</body>
+<script>
+  function validate() {
+    var ogPassword = document.getElementById("password");
+    var checkPassword = document.getElementById("passwordCheck");
+    if (checkPassword.value != ogPassword.value) {
+      alert("Passwords do not match. Please re-enter.");
+      checkPassword.setCustomValidity("invalid");
+    } else {
+      checkPassword.setCustomValidity("");
+    }
+  }
+
+  // code to set max date of birth to today, whenever that is!
+
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; // January is 0!
+  var yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+  if (mm < 10){
+    mm = '0' + mm;
+  }
+
+  today = yyyy + '-' + mm + '-' + dd;
+  document.getElementById("birthDate").setAttribute("max", today);
+
+  function welcome() {
+    var fname = document.getElementById("fname");
+    var message = `Welcome ${fname.value}! Please enter your mobile number to receive a phone call:`
+    result = window.prompt(message, "###-###-####");
+    verifyPhone(result);
+  }
+
+  function verifyPhone(phone) {
+
+    var group1 = document.getElementById('mobile1');
+    var group2 = document.getElementById('mobile2');
+    var group3 = document.getElementById('mobile3');
+
+    if (group1.checked) {
+      if (document.getElementById('num1').value == phone) {
+        alert("Thank you! You will receive your phone call shortly.");
+      } else {
+        alert("You have not entered the mobile number we have on file. Please re-enter.");
+        // if cancel the close
+        //else
+        welcome();
+      }
+    }
+
+    if (group2.checked) {
+      if (document.getElementById('num2').value == phone) {
+        alert("Thank you! You will receive your phone call shortly.");
+      } else {
+        alert("You have not entered the mobile number we have on file. Please re-enter.");
+        welcome();
+      }
+    }
+
+      if (group3.checked) {
+        if (document.getElementById('num3').value == phone) {
+          alert("Thank you! You will receive your phone call shortly.");
+        } else {
+          alert("You have not entered the mobile number we have on file. Please re-enter.");
+          welcome();
+        }
+      }
+    }
+
+</script>
+</html>
